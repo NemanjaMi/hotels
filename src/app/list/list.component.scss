@@ -1,0 +1,63 @@
+.example-button-row{
+    margin-bottom: 30px;
+}
+
+li{
+    list-style: none;
+    margin-bottom: 20px;
+}
+.mat-card{
+    display: flex;
+    flex-wrap: wrap;  
+    text-align: left;
+}
+.example-card{
+    padding: 0;
+}
+.pictures{
+    width: 30%;
+    font-size: 0;
+    line-height: 0;
+    img{
+        width: 100%;
+        margin: 0;
+        border-radius: 5px;
+    }
+}
+.discription{
+    width: 70%;
+    padding: 20px 30px;
+    .stars{
+        position: absolute;
+        top: 30px;
+        right: 30px;
+    }
+    .discription_parts{
+        margin-top: 20px;
+        .discription_field{
+            margin-bottom: 40px;
+        }
+        .time{
+            float: right;
+            h1{
+                text-align: right;
+            }
+        }
+    }
+    h1{
+        text-transform: capitalize;
+        margin-bottom: 0;
+
+    }
+    span{
+       
+    }
+}
+.review{
+    padding: 50px;
+    background-color: #f2f2f7;
+    width: 100%;
+    .review_field{
+        
+    }
+}

@@ -1,0 +1,35 @@
+<div class="example-button-row">
+    <button mat-raised-button color="primary" (click)="getData()">Load Hotels</button>
+
+</div>
+<ul [hidden]='errorLoadingHotels'>
+    <li *ngFor="let list of listhotelServicelist">
+        <mat-card class="example-card">
+            <div class="pictures">
+                <img mat-card-image src="{{list.images[1]}}" alt="">
+            </div>
+            <div class="discription">
+                <div>
+                    <h1>{{list.name}}</h1>
+                    <span> {{list.city}} - {{list.country}}</span>
+                <div class="stars">{{list.stars}} ★</div>
+                </div>
+                <div class="discription_parts">
+                    <div class="discription_field">{{list.description}}</div>
+                    <div>
+                        <button mat-raised-button color="primary" (click)='list.reviewOpen = !list.reviewOpen'> Show
+                            Review</button>
+                        <div class="time">
+                            <h1>{{list.price}} €</h1> {{list.date_start}} {{list.date_end}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="review" [hidden]='!list.reviewOpen'>
+                <div class="review_field">{{list.description}}</div>
+            </div>
+        </mat-card>
+
+    </li>
+</ul>
+<div [hidden]='!errorLoadingHotels'>Pokusajte ponovo, lista hotela ne moze da se ucita</div>

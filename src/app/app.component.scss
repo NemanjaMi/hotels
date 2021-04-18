@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 80px;
+    text-align: center;
+    max-width: 1100px;
+    margin: auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.logo{
+    margin: auto;
+}
