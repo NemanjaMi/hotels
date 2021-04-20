@@ -8,10 +8,7 @@ import {ListhotelService} from './listhotel.service'
 })
 export class AppComponent {
   title = 'hotel-app';
-  constructor(private list:ListhotelService){
+  constructor(){
 
-    this.list.getData().subscribe(data=>{
-      console.warn(data);
-    })
   }
 }
