@@ -3,7 +3,7 @@
 
 </div>
 <ul [hidden]='errorLoadingHotels'>
-    <li *ngFor="let list of listhotelServicelist">
+    <li *ngFor="let list of hotelList">
         <mat-card class="example-card">
             <div class="pictures">
                 <img mat-card-image src="{{list.images[1]}}" alt="">
@@ -12,13 +12,14 @@
                 <div>
                     <h1>{{list.name}}</h1>
                     <span> {{list.city}} - {{list.country}}</span>
-                <div class="stars">{{list.stars}} ★</div>
+                    <div class="stars">{{list.stars}} ★</div>
                 </div>
                 <div class="discription_parts">
                     <div class="discription_field">{{list.description}}</div>
                     <div>
-                        <button mat-raised-button color="primary" (click)='list.reviewOpen = !list.reviewOpen'> Show
-                            Review</button>
+                
+                            <button mat-raised-button color="primary" (click)="getReview(list)"> Show
+                                Review</button>
                         <div class="time">
                             <h1>{{list.price}} €</h1> {{list.date_start}} {{list.date_end}}
                         </div>
@@ -26,10 +27,19 @@
                 </div>
             </div>
             <div class="review" [hidden]='!list.reviewOpen'>
-                <div class="review_field">{{list.description}}</div>
+                <div  class="review_field">
+                        <ul>
+                                <li *ngFor="let review of list.reviews">
+                                    {{review.comment}}
+                                </li>
+                            </ul>
+                            <div [hidden]='list.reviews.length > 0'>Pokusajte ponovo, lista hotela ne moze da se ucita</div>
+                </div>
+                
             </div>
         </mat-card>
 
     </li>
 </ul>
 <div [hidden]='!errorLoadingHotels'>Pokusajte ponovo, lista hotela ne moze da se ucita</div>
+
