@@ -58,6 +58,15 @@ li{
     background-color: #f2f2f7;
     width: 100%;
     .review_field{
-        
+        margin-top: 50px;
+        .review-icon{
+            float: left;
+            width: 10%;
+        }
+        .review-text{
+            float: left;
+            width: 90%;
+        }
     }
 }
+
